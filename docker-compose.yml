@@ -1,0 +1,10 @@
+services:
+  backend:
+    build: ./
+    command: npm run dev
+    ports:
+      - 5000:5000
+  db:
+    image: mongo
+    ports:
+      - 21017:21017

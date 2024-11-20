@@ -26,7 +26,7 @@ class PostController{
             const post = await PostService.update(req.body)
             return res.json(post)
         } catch(e){
-            res.status(500).json(e.message)
+            res.status(500).json({"error": e.message})
         }
     }
     async delete(req, res){
@@ -34,7 +34,7 @@ class PostController{
             const post = await PostService.delete(req.params.id)
             return res.json(post)
         } catch(e){
-            res.status(500).json(e.message)
+            res.status(500).json({"error": e.message})
         }
     }
 }

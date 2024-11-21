@@ -1,6 +1,7 @@
 FROM node
-WORKDIR /
+WORKDIR /backend
 COPY package-lock.json package.json ./
 RUN npm install
 COPY . ./
-#CMD npm start
+EXPOSE 5000
+CMD npm run dev
